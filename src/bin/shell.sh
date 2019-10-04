@@ -5,8 +5,11 @@ bin=$(cd "$bin" > /dev/null || exit; pwd)
 cd "$bin" || exit
 
 cd ..
+libs=$(echo lib/*)
+jars=${libs// /,}
 
-spark-submit --class com.spark.WordCountDemo \
+spark-submit --class com.hbase.rdd.HBaseSparkRDDReadDemo \
+    --jars $jars \
     --master yarn \
     --deploy-mode cluster \
     --driver-memory 4g \
