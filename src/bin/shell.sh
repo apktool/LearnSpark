@@ -17,3 +17,17 @@ spark-submit --class com.hbase.rdd.HBaseSparkRDDReadDemo \
     --executor-cores 1 \
     --queue default \
     LearnSpark-1.0-SNAPSHOT.jar
+
+
+spark-submit --class com.spark.PropertiesConfigDemo \
+    --properties-file conf/application.properties \
+    --jars $jars \
+    --name PropDemo \
+    --master yarn \
+    --deploy-mode cluster \
+    --driver-memory 4g \
+    --executor-memory 2g \
+    --executor-cores 1 \
+    --queue default \
+    LearnSpark-1.0-SNAPSHOT.jar
+
