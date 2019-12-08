@@ -22,6 +22,8 @@ object HBaseSparkRDDReadDemo {
       .getOrCreate()
 
     val conf = HBaseConfiguration.create()
+    conf.setInt("hbase.zookeeper.property.clientPort", 2181)
+    conf.set("hbase.zookeeper.quorum", "localhost")
 
     val hbaseContext = new HBaseContext(spark.sparkContext, conf)
     try {
@@ -30,7 +32,7 @@ object HBaseSparkRDDReadDemo {
         Bytes.toBytes("2")))
 
       //make sure you import import org.apache.hadoop.hbase.spark.HBaseRDDFunctions._
-      val getRdd = rdd.hbaseBulkGet[String](hbaseContext, TableName.valueOf("employee"), 2,
+      val getRdd = rdd.hbaseBulkGet[String](hbaseContext, TableName.valueOf("test"), 2,
         record => {
           System.out.println("making Get" + record)
           new Get(record)

@@ -35,7 +35,6 @@ object Accumulators {
     println("*** using a set accumulator")
     words.filter(_.startsWith("F")).foreach(names.add)
     println("All the names starting with 'F' are a set")
-    names.value.iterator().forEachRemaining(println)
   }
 
   class StringSetAccumulator extends AccumulatorV2[String, java.util.Set[String]] {
