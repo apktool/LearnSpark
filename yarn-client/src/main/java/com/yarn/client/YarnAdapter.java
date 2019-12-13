@@ -43,7 +43,6 @@ public class YarnAdapter {
     public YarnApplicationState getApplicationState(ApplicationId applicationId) {
         YarnApplicationState yarnApplicationState = null;
         try {
-            init();
             ApplicationReport applicationReport = yarnClient.getApplicationReport(applicationId);
             yarnApplicationState = applicationReport.getYarnApplicationState();
         } catch (YarnException e) {

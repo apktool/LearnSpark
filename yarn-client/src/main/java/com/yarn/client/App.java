@@ -15,7 +15,7 @@ public class App {
     public static void main(String[] args) {
         YarnAdapter app = new YarnAdapter();
         app.init();
-        ApplicationId id = app.getRunningApplicationId("livy-session-2");
+        ApplicationId id = app.getRunningApplicationId("Spark shell");
         YarnApplicationState state = app.getApplicationState(id);
         System.out.println(state);
         app.killApplicationId(id);

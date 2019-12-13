@@ -22,7 +22,7 @@ public class LauncherServerDemo {
                 .setConf(SparkLauncher.DRIVER_MEMORY, "2g")
                 .setConf(SparkLauncher.EXECUTOR_MEMORY, "1g")
                 .setConf(SparkLauncher.EXECUTOR_CORES, "3")
-                .setMainClass(SparkLauncherTestApp.class.getName())
+                .setMainClass(LauncherServerDemo.class.getName())
                 // .setAppResource(SparkLauncher.NO_RESOURCE)
                 .setMainClass("org.apache.spark.examples.SparkPi")
                 .setAppResource("/home/li/Software/spark-2.4.4-bin-without-hadoop/examples/jars/spark-examples_2.11-2.4.4.jar")
@@ -63,10 +63,4 @@ public class LauncherServerDemo {
         demo.start(args);
     }
 
-    public static class SparkLauncherTestApp {
-
-        public static void main(String[] args) throws Exception {
-            System.out.println("Hello world");
-        }
-    }
 }

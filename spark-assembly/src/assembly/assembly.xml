@@ -6,12 +6,14 @@
         <format>dir</format>
     </formats>
 
+    <!--
     <files>
         <file>
-            <source>README.md</source>
+            <source>${project.parent.basedir}/README.md</source>
             <outputDirectory>docs</outputDirectory>
         </file>
     </files>
+    -->
 
     <fileSets>
         <fileSet>
