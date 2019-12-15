@@ -11,6 +11,7 @@
         <module>spark-demo</module>
         <module>spark-launcher</module>
         <module>yarn-client</module>
+        <module>spark-repl</module>
         <module>spark-hbase</module>
     </modules>
     <properties>
