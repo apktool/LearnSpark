@@ -48,11 +48,21 @@ override def process(settings: Settings): Boolean = {
 
 ## 使用说明
 
-目前这段代码无法提交到Yarn上面运行
 这里为了不再引入额外的代码，采用手动初始化Spark Context，如下所示
+
+### master为local
 
 ```bash
 /home/li/Software/scala-2.12.8/bin/scala -Dspark.repl.local.jars=$(echo *.jar lib/*.jar | tr ' ' ',') -cp spark-repl-1.0-SNAPSHOT.jar com.spark.repl.Main
+
+scala> :reset
+```
+
+### master为yarn
+
+```bash
+cd /home/li/WorkSpace/LearnSpark/spark-repl/src/main/scripts
+bash shell.sh
 
 scala> :reset
 ```

@@ -55,11 +55,11 @@ class SparkILoop(in: Option[BufferedReader], out: JPrintWriter) extends ILoop(in
   }
 
   val initializationCommands: Seq[String] = Seq(
+    "import org.apache.spark.SparkContext._",
+    "import org.apache.spark.sql.functions._",
+    "import org.apache.spark.sql",
+    "import com.spark.repl.Utils",
     """
-    import org.apache.spark.SparkContext._
-    import org.apache.spark.sql.functions._
-    import org.apache.spark.sql
-    import com.spark.repl.Utils
     @transient val spark = if (Utils.sparkSession != null) {
         Utils.sparkSession
       } else {
